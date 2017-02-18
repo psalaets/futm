@@ -1,14 +1,19 @@
 {
   "name": "futm",
   "version": "1.0.0",
-  "description": "",
+  "description": "Remove utm_ query string parameters from a url",
   "main": "index.js",
   "scripts": {
     "test": "karma start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["utm", "url", "query"],
+  "author": "Paul Salaets <psalaets@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/psalaets/futm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psalaets/futm.git"
+  },
   "devDependencies": {
     "karma": "^1.4.1",
     "karma-chrome-launcher": "^2.0.0",
