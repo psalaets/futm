@@ -15,12 +15,18 @@ function forgetUtm(url) {
 
 // all this to prevent https://blah.com => https://blah.com/
 function preservePathname(source, modified) {
-  const parts = new URL(source);
-
-  // path is empty
-  if (parts.pathname === '/' && source[parts.origin.length] !== '/') {
-    return modified.origin + modified.pathname.slice(0, -1) + modified.search + modified.hash;
+  if (hasEmptyPathname(source)) {
+    return omitPathname(modified);
   }
 
   return modified.toString();
+}
+
+function hasEmptyPathname(source) {
+  const parts = new URL(source);
+  return parts.pathname === '/' && source[parts.origin.length] !== '/';
+}
+
+function omitPathname(modified) {
+  return modified.origin + modified.search + modified.hash;
 }

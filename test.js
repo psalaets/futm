@@ -9,7 +9,7 @@ test('makes no change if no query params', t => {
   t.equals(result, 'https://blah.com');
 });
 
-test('preserves trailing slash', t => {
+test('preserves single slash pathname', t => {
   t.plan(1);
 
   var result = forgetUtm('https://blah.com/');
