@@ -1,0 +1,21 @@
+{
+  "name": "futm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-tap": "^3.1.1",
+    "karma-webpack": "^2.0.2",
+    "tape": "^4.6.3",
+    "webpack": "^2.2.1"
+  }
+}
