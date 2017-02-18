@@ -17,19 +17,10 @@ function forgetUtm(url) {
 function preservePathname(source, modified) {
   const parts = new URL(source);
 
-  // path is empty or a single slash
-  if (parts.pathname === '/') {
-    // it really is a single slash
-    if (source[parts.origin.length] === '/') {
-      return modified.toString();
-    } else {
-      return modified.origin + trimTrailingSlash(modified.pathname) + modified.search + modified.hash;
-    }
-  } else {
-    return modified.toString();
+  // path is empty
+  if (parts.pathname === '/' && source[parts.origin.length] !== '/') {
+    return modified.origin + modified.pathname.slice(0, -1) + modified.search + modified.hash;
   }
-}
 
-function trimTrailingSlash(str) {
-  return str.endsWith('/') ? str.slice(0, -1) : str;
+  return modified.toString();
 }
